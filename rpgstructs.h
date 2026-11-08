@@ -2,32 +2,32 @@
 #define RPGSTRUCTS_H
 
 typedef struct {
-    char nome[102];
-    int data_registro;
-    char email[102];
-    char codigo[22];
-}Jogador;
-
-typedef struct {
     float forca;
     float agilidade;
     float magia;
 }Atributos;
 
-typedef struct {
+typedef struct{
+    char nome[102];
+    int data_registro;
+    char email[102];
+    char ID_jogador[22];
+}Jogador;
+
+typedef struct{
     char nome[102];
     int classe;
     int especie;
-    char codigo[22];
+    char ID_personagem[22];
     int nivel;
     float exp;
     Atributos stats;
 }Personagem;
 
-typedef struct {
+typedef struct{
     int numero;
-    char nome_personagem[102];
-    char nome_jogador[102];
+    char ID_personagem[22];
+    char ID_jogador [22];
     int data_sessao;
     float exp_recebida;
     int dano_causado;

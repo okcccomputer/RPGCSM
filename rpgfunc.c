@@ -12,7 +12,7 @@ int buscarJogador(Jogador jogador[], int quantidade, char codigo[]) {
         return -1;
     }
     for (int i = 0; i < quantidade; i++) {
-        if (strcmp(jogador[i].codigo, codigo) == 0) {
+        if (strcmp(jogador[i].ID_jogador, codigo) == 0) {
             return i;
         }
     }
@@ -27,7 +27,7 @@ int cadastrarJogador(Jogador jogador[], int *quantidade, Jogador novo) {
         return 0;
     }
 
-    if (buscarJogador(jogador, *quantidade, novo.codigo) != -1) {
+    if (buscarJogador(jogador, *quantidade, novo.ID_jogador) != -1) {
         return 0;
     }
 
@@ -49,7 +49,7 @@ void listarJogadores(Jogador jogador[], int quantidade) {
         printf("Nome: %s\n", jogador[i].nome);
         printf("Data de registro: %d\n", jogador[i].data_registro);
         printf("E-mail: %s\n", jogador[i].email);
-        printf("Codigo: %s\n\n", jogador[i].codigo);
+        printf("ID: %s\n\n", jogador[i].ID_jogador);
     }
 }
 
@@ -60,7 +60,7 @@ int alterarJogador(Jogador jogador[], int quantidade, char codigo[], Jogador atu
     if (posicao == -1) {
         return 0;
     }
-    strcpy(atualizado.codigo, jogador[posicao].codigo);
+    strcpy(atualizado.ID_jogador, jogador[posicao].ID_jogador);
     jogador[posicao] = atualizado;
 
     return 1;
@@ -92,7 +92,7 @@ int buscarPersonagem(Personagem personagem[], int quantidade, char codigo[]) {
     }
 
     for (int i = 0; i < quantidade; i++) {
-        if (strcmp(personagem[i].codigo, codigo) == 0) {
+        if (strcmp(personagem[i].ID_personagem, codigo) == 0) {
             return i;
         }
     }
@@ -107,7 +107,7 @@ int cadastrarPersonagem(Personagem personagem[], int *quantidade, Personagem nov
         return 0;
     }
 
-    if (buscarPersonagem(personagem, *quantidade, novo.codigo) != -1) {
+    if (buscarPersonagem(personagem, *quantidade, novo.ID_personagem) != -1) {
         return 0;
     }
 
@@ -129,7 +129,7 @@ void listarPersonagens(Personagem personagem[], int quantidade) {
         printf("Nome: %s\n", personagem[i].nome);
         printf("Classe: %d\n", personagem[i].classe);
         printf("Especie: %d\n", personagem[i].especie);
-        printf("Codigo: %s\n", personagem[i].codigo);
+        printf("ID: %s\n", personagem[i].ID_personagem);
         printf("Nivel: %d\n", personagem[i].nivel);
         printf("Experiencia: %.2f\n", personagem[i].exp);
         printf("Forca: %.2f\n", personagem[i].stats.forca);
@@ -146,7 +146,7 @@ int alterarPersonagem(Personagem personagem[], int quantidade, char codigo[], Pe
         return 0;
     }
 
-    strcpy(atualizado.codigo, personagem[posicao].codigo);
+    strcpy(atualizado.ID_personagem, personagem[posicao].ID_personagem);
     personagem[posicao] = atualizado;
 
     return 1;
@@ -213,8 +213,8 @@ void listarSessoes(Sessao sessao[], int quantidade) {
     for (int i = 0; i < quantidade; i++) {
         printf("Sessao %d\n", i + 1);
         printf("Numero: %d\n", sessao[i].numero);
-        printf("Personagem: %s\n", sessao[i].nome_personagem);
-        printf("Jogador: %s\n", sessao[i].nome_jogador);
+        printf("ID do personagem: %s\n", sessao[i].ID_personagem);
+        printf("ID do jogador: %s\n", sessao[i].ID_jogador);
         printf("Data da sessao: %d\n", sessao[i].data_sessao);
         printf("Experiencia recebida: %.2f\n", sessao[i].exp_recebida);
         printf("Dano causado: %d\n\n", sessao[i].dano_causado);
