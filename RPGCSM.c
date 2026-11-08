@@ -1,35 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "rpgstructs.h"
+#include "rpgfunc.h"
 
-struct atributos{
-    float forca;
-    float agilidade;
-    float magia;
-};
+#define MAX 5
 
-struct jogador{
-    char nome[102];
-    int data_registro;
-    char email[102];
-    char codigo[22];
-};
+int main (){
 
-struct personagem{
-    char nome[102];
-    int classe;
-    int especie;
-    char codigo[22];
-    int nivel;
-    float exp;
-    struct atributos stats;
-};
+    Jogador jogador[MAX];
+    Personagem personagem[MAX];
+    Sessao sessao[MAX];
+    
+    int qtdJogadores = 0, qtdPersonagens = 0, qtdSessoes = 0;
+     
+    
+    
 
-struct sessao{
-    int numero;
-    char nome_personagem[102];
-    char nome_jogador[102];
-    int data_sessao;
-    float exp_recebida;
-    int dano_causado;
-};
+
+    return 0;
+}
