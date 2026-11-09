@@ -7,15 +7,15 @@
 
 int cadastrarJogador(Jogador jogador[], int *quantidade, Jogador novo);
 void listarJogadores(Jogador jogador[], int quantidade);
-int buscarJogador(Jogador jogador[], int quantidade, char codigo[]);
-int alterarJogador(Jogador jogador[], int quantidade, char codigo[], Jogador atualizado);
-int excluirJogador(Jogador jogador[], int *quantidade, char codigo[]);
+int buscarJogador(Jogador jogador[], int quantidade, char ID[]);
+int alterarJogador(Jogador jogador[], int quantidade, char ID[], Jogador atualizado);
+int excluirJogador(Jogador jogador[], int *quantidade, char ID[]);
 
 int cadastrarPersonagem(Personagem personagem[], int *quantidade, Personagem novo);
 void listarPersonagens(Personagem personagem[], int quantidade);
-int buscarPersonagem(Personagem personagem[], int quantidade, char codigo[]);
-int alterarPersonagem(Personagem personagem[], int quantidade, char codigo[], Personagem atualizado);
-int excluirPersonagem(Personagem personagem[], int *quantidade, char codigo[]);
+int buscarPersonagem(Personagem personagem[], int quantidade, char ID[]);
+int alterarPersonagem(Personagem personagem[], int quantidade, char ID[], Personagem atualizado);
+int excluirPersonagem(Personagem personagem[], int *quantidade, char ID[]);
 
 int cadastrarSessao(Sessao sessao[], int *quantidade, Sessao nova);
 void listarSessoes(Sessao sessao[], int quantidade);

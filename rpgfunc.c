@@ -6,13 +6,13 @@
 
 // CRUD DO JOGADOR 
 
-int buscarJogador(Jogador jogador[], int quantidade, char codigo[]) {
+int buscarJogador(Jogador jogador[], int quantidade, char ID[]) {
 
-    if (jogador == NULL || codigo == NULL || quantidade < 0) {
+    if (jogador == NULL || ID == NULL || quantidade < 0) {
         return -1;
     }
     for (int i = 0; i < quantidade; i++) {
-        if (strcmp(jogador[i].ID_jogador, codigo) == 0) {
+        if (strcmp(jogador[i].ID_jogador, ID) == 0) {
             return i;
         }
     }
@@ -53,9 +53,9 @@ void listarJogadores(Jogador jogador[], int quantidade) {
     }
 }
 
-int alterarJogador(Jogador jogador[], int quantidade, char codigo[], Jogador atualizado) {
+int alterarJogador(Jogador jogador[], int quantidade, char ID[], Jogador atualizado) {
 
-    int posicao = buscarJogador(jogador, quantidade, codigo);
+    int posicao = buscarJogador(jogador, quantidade, ID);
 
     if (posicao == -1) {
         return 0;
@@ -66,12 +66,12 @@ int alterarJogador(Jogador jogador[], int quantidade, char codigo[], Jogador atu
     return 1;
 }
 
-int excluirJogador(Jogador jogador[], int *quantidade, char codigo[]) {
+int excluirJogador(Jogador jogador[], int *quantidade, char ID[]) {
 
     if (quantidade == NULL) {
         return 0;
     }
-    int posicao = buscarJogador(jogador, *quantidade, codigo);
+    int posicao = buscarJogador(jogador, *quantidade, ID);
 
     if (posicao == -1) {
         return 0;
@@ -85,14 +85,14 @@ int excluirJogador(Jogador jogador[], int *quantidade, char codigo[]) {
 
 //CRUD DO PERSONAGEM
 
-int buscarPersonagem(Personagem personagem[], int quantidade, char codigo[]) {
+int buscarPersonagem(Personagem personagem[], int quantidade, char ID[]) {
 
-    if (personagem == NULL || codigo == NULL || quantidade < 0) {
+    if (personagem == NULL || ID == NULL || quantidade < 0) {
         return -1;
     }
 
     for (int i = 0; i < quantidade; i++) {
-        if (strcmp(personagem[i].ID_personagem, codigo) == 0) {
+        if (strcmp(personagem[i].ID_personagem, ID) == 0) {
             return i;
         }
     }
@@ -138,9 +138,9 @@ void listarPersonagens(Personagem personagem[], int quantidade) {
     }
 }
 
-int alterarPersonagem(Personagem personagem[], int quantidade, char codigo[], Personagem atualizado) {
+int alterarPersonagem(Personagem personagem[], int quantidade, char ID[], Personagem atualizado) {
 
-    int posicao = buscarPersonagem(personagem, quantidade, codigo);
+    int posicao = buscarPersonagem(personagem, quantidade, ID);
 
     if (posicao == -1) {
         return 0;
@@ -152,13 +152,13 @@ int alterarPersonagem(Personagem personagem[], int quantidade, char codigo[], Pe
     return 1;
 }
 
-int excluirPersonagem(Personagem personagem[], int *quantidade, char codigo[]) {
+int excluirPersonagem(Personagem personagem[], int *quantidade, char ID[]) {
     
     if (quantidade == NULL) {
         return 0;
     }
 
-    int posicao = buscarPersonagem(personagem, *quantidade, codigo);
+    int posicao = buscarPersonagem(personagem, *quantidade, ID);
 
     if (posicao == -1) {
         return 0;
